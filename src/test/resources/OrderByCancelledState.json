@@ -1,0 +1,9 @@
+{
+  "id": 20,
+  "customerId": "8574b3c0-ee3b-4532-9131-22c1769f0c45",
+  "employeeId": "7bb6f2c1-2aae-46db-af97-a415d2adcdd3",
+  "productId": "d1a06bd1-5e4f-42e5-8b76-7ad796908bb9",
+  "productCost": 654,
+  "cancelledReason": "some reason",
+  "state": "CANCELLED"
+}

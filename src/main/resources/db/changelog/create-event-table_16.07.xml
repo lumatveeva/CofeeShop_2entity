@@ -1,0 +1,29 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="create-event-table_16.07" author="Liubov Matveeva">
+        <createTable tableName="event" schemaName="public">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="order_id" type="int"/>
+            <column name="customer_id" type="uuid"/>
+            <column name="employee_id" type="uuid"/>
+            <column name="delivery_time" type="timestamp"/>
+            <column name="product_id" type="uuid"/>
+            <column name="product_cost" type="numeric"/>
+            <column name="time_stamp" type="timestamp"/>
+            <column name="cancelled_reason" type="varchar(100)"/>
+            <column name="event_type" type="varchar(50)"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="event"
+                                 baseColumnNames="order_id"
+                                 constraintName="fk_order_id"
+                                 referencedTableName="orders"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"
+                                 onUpdate="CASCADE"/>
+    </changeSet>
+
+</databaseChangeLog>
